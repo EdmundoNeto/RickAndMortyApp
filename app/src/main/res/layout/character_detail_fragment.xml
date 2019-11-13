@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable name="character" type="com.rickmortyapp.domain.model.CharacterDetail"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".ui.main.MovieDetailFragment"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/great_padding"
+        android:background="@android:color/transparent"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/medium_padding"
+            app:cardCornerRadius="@dimen/medium_padding"
+            app:contentPadding="@dimen/medium_padding"
+            app:cardUseCompatPadding="true"
+            android:layout_gravity="center"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:imageUrl="@{character.image}"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/title_style"
+                    android:layout_margin="10dp"
+                    tools:text="PICKLE RICKy"
+                    android:text="@{character.name}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_style"
+                    tools:text="Female"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:text="@{character.gender}"
+                    android:id="@+id/textview_details_genres"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_style"
+                    tools:text="Total Episodes: "
+                    android:layout_marginTop="@dimen/medium_padding"
+                    android:text="@{@string/total_episodes(character.totalEpisodes)}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_style"
+                    tools:text="Location: Earth"
+                    android:text="@{@string/location(character.location.name)}"
+                    android:layout_marginTop="@dimen/medium_padding"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/item_style"
+                    tools:text="Type: Human"
+                    android:id="@+id/tvType"
+                    android:textAlignment="textStart"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

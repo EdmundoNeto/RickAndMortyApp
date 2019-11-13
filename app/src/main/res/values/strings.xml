@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RickyMortyApp</string>
+    <string name="search_view_title">Search</string>
+    <string name="total_episodes">Total episodes: %s</string>
+    <string name="location">Location: %s</string>
+    <string name="type">Type: %s</string>
+</resources>
